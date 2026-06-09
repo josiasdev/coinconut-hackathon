@@ -1,4 +1,5 @@
 # COINCONUT — ImpactLedger
+  <img src="docs/images/hero.jpg" alt="COINCONUT Banner" style="width: 100%; border-radius: 12px; margin-bottom: 20px;" />
 
 ## Sobre o desafio
 Projeto oficial submetido ao desafio **ImpactLedger** do Hackathon Web3 RESTIC 29.
@@ -43,6 +44,39 @@ O fluxo principal é orquestrado através de 3 portais:
 - **PaymentLedger (Oráculo PIX):** [0x80d9A97CEE8F8530888879d09fc1010082aFEd64](https://sepolia.etherscan.io/address/0x80d9A97CEE8F8530888879d09fc1010082aFEd64)
 - **BriquetteMarket (B2B):** [0xFFd48Fd40f6C3c734a384d1f7FB2581185AaDA8e](https://sepolia.etherscan.io/address/0xFFd48Fd40f6C3c734a384d1f7FB2581185AaDA8e)
 - **SustainabilityNFT (Selo ESG ERC-721):** [0x6C3aa917f8C10C3608cb0dA877eb3F4eE6284619](https://sepolia.etherscan.io/address/0x6C3aa917f8C10C3608cb0dA877eb3F4eE6284619)
+
+---
+
+## Demonstração Visual (Screenshots)
+
+> **Nota:** As imagens abaixo ilustram o fluxo simplificado e intuitivo do COINCONUT.
+
+### 1. Acesso Simples via Web2 (Account Abstraction)
+<img src="docs/images/login.jpg" alt="Tela de Login" width="800" />
+<br/>
+Sem carteiras complexas. Catadores e Pontos de coleta acessam diretamente com e-mail/Google.
+
+### 2. Dashboard do Catador (Oráculo PIX)
+<img src="docs/images/dashboard-catador.jpg" alt="Dashboard do Catador" width="800" />
+<br/>
+Acompanhamento em tempo real das pesagens validadas e saldo disponível para saque imediato.
+
+### 3. Registro do Ponto de Coleta (Rastreabilidade)
+<img src="docs/images/registro-coleta.jpg" alt="Registro de Coleta" width="800" />
+<br/>
+A pesagem física da casca de coco é inserida no sistema e cunhada como um lote ERC-1155 imutável.
+
+### 4. Galeria ESG (NFTs Soulbound)
+<img src="docs/images/galeria-esg.jpg" alt="Galeria ESG" width="800" />
+<br/>
+Os certificados de logística reversa são transformados em Trading Cards colecionáveis e intransferíveis para as fábricas.
+
+### 5. Prova de Auditoria On-Chain (Transparência)
+<img src="docs/images/auditoria-onchain.jpg" alt="Transparência On-Chain" width="800" />
+<br/>
+Transações verificáveis no Etherscan (Sepolia), garantindo que todo o processo seja 100% à prova de Greenwashing.
+
+---
 
 ## Exemplos de aplicação no projeto
 - Certificação de impacto ESG para fábricas.
