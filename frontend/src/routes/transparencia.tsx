@@ -80,6 +80,10 @@ function Transparencia() {
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Os números abaixo são extraídos diretamente da blockchain Sepolia em tempo real.
             Nenhum servidor centralizado pode alterar ou falsificar esses dados.
+            <br/><br/>
+            <span className="text-sm italic opacity-70">
+              *Nota: Os números apresentados nesta demonstração são meramente ilustrativos e utilizados apenas para fins de avaliação do Hackathon.
+            </span>
           </p>
         </div>
 
