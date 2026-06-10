@@ -29,6 +29,8 @@ Desenvolvemos uma **infraestrutura Web3 descentralizada** que transforma o resí
 
 **Pitch Deck (Apresentação):** [Visualizar Apresentação PDF](docs/CoinConut.pdf)
 
+**Pitch Desk (Video):** [Pitch Desk Video Youtube](https://www.youtube.com/watch?v=ELOp0es3LyY)
+
 **Demonstração funcional:** 
 O fluxo principal é orquestrado através de 3 portais:
 1. **Posto de Coleta:** Pesa a casca e assina a transação, emitindo o registro imutável do lote e transferindo a custódia.
