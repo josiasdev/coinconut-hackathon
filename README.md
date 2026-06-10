@@ -27,6 +27,8 @@ Desenvolvemos uma **infraestrutura Web3 descentralizada** que transforma o resí
 
 **Link da aplicação:** [https://coinconut-hackathon.vercel.app](https://coinconut-hackathon.vercel.app)
 
+**Pitch Deck (Apresentação):** [Visualizar Apresentação PDF](docs/CoinConut.pdf)
+
 **Demonstração funcional:** 
 O fluxo principal é orquestrado através de 3 portais:
 1. **Posto de Coleta:** Pesa a casca e assina a transação, emitindo o registro imutável do lote e transferindo a custódia.
