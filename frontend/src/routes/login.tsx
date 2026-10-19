@@ -72,23 +72,23 @@ function Login() {
   return (
     <div className="min-h-screen flex flex-col">
       <Nav />
-      <main className="flex-1 flex items-center justify-center px-6 pt-28 pb-12">
+      <main className="flex-1 flex items-center justify-center px-4 sm:px-6 pt-24 sm:pt-28 pb-12">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="w-full max-w-2xl"
         >
-          <div className="text-center mb-10">
-            <h1 className="font-display text-4xl md:text-5xl mb-3">
+          <div className="text-center mb-8 sm:mb-10">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl mb-3">
               Acesso <span className="text-gradient-gold italic">Simples</span>
             </h1>
-            <p className="text-muted-foreground">
+            <p className="text-sm sm:text-base text-muted-foreground">
               Sem senhas complexas. Escolha seu perfil e entre com seu e-mail ou Google.
             </p>
           </div>
 
-          <div className="glass-card rounded-3xl p-6 md:p-10 space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="glass-card rounded-3xl p-5 sm:p-8 md:p-10 space-y-6 sm:space-y-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
               {roles.map((role) => (
                 <button
                   key={role.id}

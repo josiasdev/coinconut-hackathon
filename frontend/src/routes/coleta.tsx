@@ -153,14 +153,14 @@ function Coleta() {
   return (
     <div className="min-h-screen">
       <Nav />
-      <main className="max-w-3xl mx-auto px-6 pt-28 pb-12">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-12">
 
         {/* Header */}
-        <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
           <div className="text-xs font-mono uppercase tracking-widest text-accent">
             Agente de Coleta · Sepolia
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             {!account ? (
               <button
                 onClick={handleConnect}
@@ -183,7 +183,7 @@ function Coleta() {
           </div>
         </div>
 
-        <h1 className="font-display text-4xl md:text-5xl mb-10">
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-10">
           Registrar <span className="text-gradient-gold italic">entrega de casca</span>
         </h1>
 
@@ -208,7 +208,7 @@ function Coleta() {
             <motion.form key="form" onSubmit={submit} className="space-y-5">
 
               {/* Produtor */}
-              <div className="glass-card rounded-2xl p-7">
+              <div className="glass-card rounded-2xl p-5 sm:p-7">
                 <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground block mb-3">
                   Produtor
                 </label>
@@ -235,7 +235,7 @@ function Coleta() {
               </div>
 
               {/* Ponto de coleta lido do contrato */}
-              <div className="glass-card rounded-2xl p-7">
+              <div className="glass-card rounded-2xl p-5 sm:p-7">
                 <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground block mb-3">
                   Ponto de coleta
                 </label>
@@ -278,7 +278,7 @@ function Coleta() {
               </div>
 
               {/* Peso */}
-              <div className="glass-card rounded-2xl p-7">
+              <div className="glass-card rounded-2xl p-5 sm:p-7">
                 <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground block mb-3">
                   Peso da entrega (kg)
                 </label>
@@ -288,18 +288,18 @@ function Coleta() {
                   onChange={(e) => setPeso(e.target.value)}
                   min={1}
                   max={500}
-                  className="w-full bg-secondary/40 border border-border rounded-xl px-4 py-3.5 font-display text-3xl focus:outline-none focus:border-gold/60 transition"
+                  className="w-full bg-secondary/40 border border-border rounded-xl px-4 py-3.5 font-display text-2xl sm:text-3xl focus:outline-none focus:border-gold/60 transition"
                 />
-                <div className="mt-3 flex items-center justify-between text-sm">
+                <div className="mt-3 flex items-center justify-between text-sm flex-wrap gap-2">
                   <span className="text-muted-foreground">Produtor vai receber</span>
-                  <span className="font-display text-xl text-gradient-gold">
+                  <span className="font-display text-lg sm:text-xl text-gradient-gold">
                     R$ {valor.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
                   </span>
                 </div>
               </div>
 
               {/* Checklist de qualidade */}
-              <div className="glass-card rounded-2xl p-7">
+              <div className="glass-card rounded-2xl p-5 sm:p-7">
                 <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground block mb-4">
                   Checklist de qualidade
                 </label>

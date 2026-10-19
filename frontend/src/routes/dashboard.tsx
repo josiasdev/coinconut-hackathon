@@ -111,10 +111,10 @@ function ProdutorView() {
 
   return (
     <div>
-      <div className="flex items-end justify-between flex-wrap gap-4 mb-8">
+      <div className="flex items-start sm:items-end justify-between flex-col sm:flex-row gap-4 mb-8">
         <div>
           <div className="text-xs font-mono uppercase tracking-widest text-accent mb-2">Sua conta</div>
-          <h1 className="font-display text-4xl md:text-5xl">Olá, <span className="text-gradient-gold italic">{isReal ? "Produtor(a)" : d.nome}</span> 👋</h1>
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl">Olá, <span className="text-gradient-gold italic">{isReal ? "Produtor(a)" : d.nome}</span> 👋</h1>
           {!isReal && (
             <button onClick={connectWallet} disabled={isConnecting} className="mt-3 text-xs flex items-center gap-2 text-muted-foreground hover:text-gold transition border border-border px-3 py-1.5 rounded-full">
               {isConnecting ? <Loader2 className="size-3 animate-spin"/> : <Wallet className="size-3"/>}
@@ -122,28 +122,28 @@ function ProdutorView() {
             </button>
           )}
         </div>
-        <Link to="/saque" className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-primary text-primary-foreground font-medium gold-glow">
+        <Link to="/saque" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-primary text-primary-foreground font-medium gold-glow">
           Sacar via PIX <ArrowUpRight className="size-4" />
         </Link>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
         <StatCard label={isReal && isLoading ? "Carregando..." : "Disponível para saque"} value={`R$ ${saldoFinal.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`} sub="Clique em 'Sacar via PIX'" color="bg-gradient-to-br from-gold to-coconut" />
         <StatCard label={isReal && isLoading ? "Carregando..." : "Entregas on-chain"} value={`${kgFinal} kg`} sub="de casca certificada" color="bg-gradient-to-br from-moss to-accent" />
         <StatCard label="Bônus Verde" value={`R$ ${d.bonusVerde.toFixed(2)}`} sub="Sustentabilidade acumulada" color="bg-gradient-to-br from-accent to-moss" />
       </div>
 
-      <div className="glass-card rounded-2xl p-6">
-        <h2 className="font-display text-xl mb-5 flex items-center gap-2">
+      <div className="glass-card rounded-2xl p-5 sm:p-6">
+        <h2 className="font-display text-lg sm:text-xl mb-5 flex items-center gap-2">
           <Leaf className="size-4 text-accent" /> 
           Suas entregas recentes {isReal && <span className="text-[10px] font-mono px-2 py-0.5 bg-accent/20 text-accent rounded uppercase">Ao vivo na rede</span>}
         </h2>
         <div className="space-y-2">
           {entregasFinais.map((e, i) => (
             <motion.div key={i} initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.05 }}
-              className="flex items-center justify-between p-4 rounded-xl hover:bg-secondary/40 transition border border-transparent hover:border-border">
+              className="flex items-center justify-between p-3.5 sm:p-4 rounded-xl hover:bg-secondary/40 transition border border-transparent hover:border-border">
               <div>
-                <div className="text-sm">{e.local}</div>
+                <div className="text-sm font-medium">{e.local}</div>
                 <div className="text-xs text-muted-foreground mt-0.5">{e.data} · {e.kg} kg</div>
               </div>
               <div className="text-right">
@@ -169,7 +169,7 @@ function Dashboard() {
   return (
     <div className="min-h-screen">
       <Nav />
-      <main className="max-w-7xl mx-auto px-6 pt-24 pb-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-24 pb-12">
         <ProdutorView />
       </main>
       <Footer />

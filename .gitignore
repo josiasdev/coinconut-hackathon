@@ -27,6 +27,10 @@ dist-ssr
 .env.*
 !.env.example
 
+# VENV
+.venv/
+venv/
+
 # HARDHAT
 cache/
 artifacts/

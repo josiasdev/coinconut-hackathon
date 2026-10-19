@@ -36,16 +36,16 @@ function ESG() {
   return (
     <div className="min-h-screen">
       <Nav />
-      <main className="max-w-5xl mx-auto px-6 pt-28 pb-12">
-        <Link to="/registrar" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8 transition">
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-12">
+        <Link to="/registrar" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6 sm:mb-8 transition">
           <ArrowLeft className="size-4" /> Voltar para o portal de Indústria
         </Link>
         
-        <div className="text-xs font-mono uppercase tracking-widest text-accent mb-3">Galeria de Conquistas</div>
-        <h1 className="font-display text-4xl md:text-5xl mb-4">
+        <div className="text-xs font-mono uppercase tracking-widest text-accent mb-2 sm:mb-3">Galeria de Conquistas</div>
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4">
           Seus <span className="text-gradient-gold italic">Selos ESG</span>
         </h1>
-        <p className="text-muted-foreground max-w-2xl mb-12">
+        <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mb-8 sm:mb-12">
           Cada selo representa um lote de casca de coco processado através da rede COINCONUT. 
           Estes certificados são NFTs (Soulbound Tokens) intransferíveis, emitidos na blockchain Sepolia, garantindo a rastreabilidade e a transparência do seu impacto ambiental.
         </p>

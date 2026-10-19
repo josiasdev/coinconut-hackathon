@@ -145,15 +145,15 @@ function Registrar() {
   return (
     <div className="min-h-screen">
       <Nav />
-      <main className="max-w-5xl mx-auto px-6 pt-28 pb-12">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-12">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-10">
           <div>
-            <div className="text-xs font-mono uppercase tracking-widest text-accent mb-3">Brasil Eco Fibras · Compra de matéria-prima</div>
-            <h1 className="font-display text-4xl md:text-5xl">
+            <div className="text-xs font-mono uppercase tracking-widest text-accent mb-2 sm:mb-3">Brasil Eco Fibras · Compra de matéria-prima</div>
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl">
               Registrar compra de <span className="text-gradient-gold italic">casca de coco</span>
             </h1>
           </div>
-          <Link to="/esg" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-gold/30 bg-gold/5 text-gold hover:bg-gold/15 transition text-sm font-medium whitespace-nowrap">
+          <Link to="/esg" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-gold/30 bg-gold/5 text-gold hover:bg-gold/15 transition text-sm font-medium whitespace-nowrap">
             <Award className="size-4" />
             Galeria ESG
           </Link>
@@ -161,7 +161,7 @@ function Registrar() {
 
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-6">
           {/* Form */}
-          <form onSubmit={submit} className="glass-card rounded-2xl p-7 space-y-6">
+          <form onSubmit={submit} className="glass-card rounded-2xl p-5 sm:p-7 space-y-6">
             {errMsg && (
               <div className="p-4 rounded-xl bg-destructive/10 border border-destructive/20 text-destructive flex items-start gap-3">
                 <AlertCircle className="size-5 shrink-0 mt-0.5" />
@@ -185,15 +185,15 @@ function Registrar() {
                       setBatchId(0);
                       setPeso("0");
                     }}
-                    className={`w-full text-left p-4 rounded-xl border transition flex items-center justify-between ${
+                    className={`w-full text-left p-4 rounded-xl border transition flex flex-col sm:flex-row sm:items-center justify-between gap-2 ${
                       produtor === p.id ? "border-gold/60 bg-gold/5" : "border-border hover:border-border/80 bg-secondary/30"
                     }`}
                   >
                     <div>
-                      <div className="text-sm">{p.name}</div>
+                      <div className="text-sm font-medium">{p.name}</div>
                       <div className="text-xs text-muted-foreground mt-0.5">{p.farm}</div>
                     </div>
-                    <div className="font-mono text-xs text-gold/80 break-all w-24 sm:w-auto text-right">{p.wallet}</div>
+                    <div className="font-mono text-xs text-gold/80 break-all sm:text-right">{p.wallet}</div>
                   </button>
                 ))}
               </div>
@@ -201,7 +201,7 @@ function Registrar() {
             <div>
               <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Lote a ser processado (Peso em kg)</label>
               {batchId > 0 ? (
-                <div className="mt-3 w-full bg-accent/10 border border-accent/20 rounded-xl px-4 py-3.5 font-display text-2xl text-foreground flex justify-between items-center">
+                <div className="mt-3 w-full bg-accent/10 border border-accent/20 rounded-xl px-4 py-3.5 font-display text-xl sm:text-2xl text-foreground flex justify-between items-center">
                   <span>{peso} <span className="text-sm font-sans text-muted-foreground ml-1">kg</span></span>
                   <span className="text-xs font-mono text-accent bg-accent/20 px-2 py-1 rounded">Lote #{batchId}</span>
                 </div>

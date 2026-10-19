@@ -160,11 +160,11 @@ function Saque() {
   return (
     <div className="min-h-screen">
       <Nav />
-      <main className="max-w-3xl mx-auto px-6 pt-28 pb-12">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-12">
         <div className="text-xs font-mono uppercase tracking-widest text-accent mb-3">
           Saque · Produtor
         </div>
-        <h1 className="font-display text-4xl md:text-5xl mb-10">
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl mb-6 sm:mb-10">
           Receber <span className="text-gradient-gold italic">via PIX</span>
         </h1>
 
@@ -173,7 +173,7 @@ function Saque() {
             <motion.div key="form" className="space-y-5">
 
               {/* Saldo */}
-              <div className="glass-card rounded-2xl p-7 relative overflow-hidden">
+              <div className="glass-card rounded-2xl p-5 sm:p-7 relative overflow-hidden">
                 <div className="absolute -top-12 -right-12 size-40 rounded-full bg-gradient-to-br from-gold to-coconut opacity-20 blur-2xl" />
                 <div className="relative">
                   {!account ? (
@@ -194,7 +194,7 @@ function Saque() {
                       <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-1">
                         Disponível para saque
                       </div>
-                      <div className="font-display text-5xl text-gradient-gold mt-2">
+                      <div className="font-display text-3xl sm:text-5xl text-gradient-gold mt-2">
                         R$ {saldoBRL.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
                       </div>
                       <div className="text-xs text-muted-foreground mt-3">
@@ -207,7 +207,7 @@ function Saque() {
 
               <form onSubmit={submit} className={`space-y-5 ${!account || saldoBRL === 0 ? "opacity-50 pointer-events-none" : ""}`}>
                 {/* Tipo de chave */}
-                <div className="glass-card rounded-2xl p-7">
+                <div className="glass-card rounded-2xl p-5 sm:p-7">
                   <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground block mb-4">
                     Tipo de chave PIX
                   </label>
@@ -220,9 +220,9 @@ function Saque() {
                           setPixType(p.key);
                           setPixKey("");
                         }}
-                        className={`p-3 rounded-xl border text-center text-sm transition ${
+                        className={`p-2.5 sm:p-3 rounded-xl border text-center text-xs sm:text-sm transition ${
                           pixType === p.key
-                            ? "border-gold/60 bg-gold/5 text-foreground"
+                            ? "border-gold/60 bg-gold/5 text-foreground font-medium"
                             : "border-border bg-secondary/30 text-muted-foreground hover:border-border/80"
                         }`}
                       >
@@ -241,12 +241,12 @@ function Saque() {
                 </div>
 
                 {/* Valor */}
-                <div className="glass-card rounded-2xl p-7">
+                <div className="glass-card rounded-2xl p-5 sm:p-7">
                   <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground block mb-3">
                     Valor a sacar
                   </label>
                   <div className="flex items-center gap-3">
-                    <span className="font-display text-2xl text-muted-foreground">R$</span>
+                    <span className="font-display text-xl sm:text-2xl text-muted-foreground">R$</span>
                     <input
                       type="number"
                       value={amount}
