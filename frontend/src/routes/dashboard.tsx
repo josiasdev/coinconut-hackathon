@@ -114,7 +114,7 @@ function ProdutorView() {
       <div className="flex items-start sm:items-end justify-between flex-col sm:flex-row gap-4 mb-8">
         <div>
           <div className="text-xs font-mono uppercase tracking-widest text-accent mb-2">Sua conta</div>
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl">Olá, <span className="text-gradient-gold italic">{isReal ? "Produtor(a)" : d.nome}</span> 👋</h1>
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl">Olá, <span className="text-gradient-gold italic">{isReal ? "Produtor(a)" : d.nome}</span></h1>
           {!isReal && (
             <button onClick={connectWallet} disabled={isConnecting} className="mt-3 text-xs flex items-center gap-2 text-muted-foreground hover:text-gold transition border border-border px-3 py-1.5 rounded-full">
               {isConnecting ? <Loader2 className="size-3 animate-spin"/> : <Wallet className="size-3"/>}
@@ -148,7 +148,7 @@ function ProdutorView() {
               </div>
               <div className="text-right">
                 <div className="text-sm font-medium">R$ {e.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</div>
-                <div className="text-xs text-accent mt-0.5">✓ Certificado</div>
+                <div className="text-xs text-accent mt-0.5">Certificado</div>
               </div>
             </motion.div>
           ))}

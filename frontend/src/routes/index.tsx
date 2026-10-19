@@ -167,7 +167,7 @@ function Landing() {
           <div className="relative">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl">Pronto para começar?</h2>
             <p className="text-muted-foreground mt-4 text-sm sm:text-base max-w-xl mx-auto">
-              Acesse a plataforma e veja como funciona — simule uma entrega de casca
+              Acesse a plataforma e veja como funciona. Simule uma entrega de casca
               ou uma compra pela fábrica.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
