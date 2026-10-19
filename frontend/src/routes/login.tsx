@@ -40,33 +40,30 @@ const roles = [
 function Login() {
   const { account, isConnecting, connectWallet } = useWeb3();
   const [selectedRole, setSelectedRole] = useState<Role>(null);
-  const [hasClickedLogin, setHasClickedLogin] = useState(false);
   const router = useRouter();
-
-  // Redireciona automaticamente APENAS após o clique no botão de login
-  useEffect(() => {
-    if (account && selectedRole && hasClickedLogin) {
-      const targetRoute = roles.find(r => r.id === selectedRole)?.route;
-      if (targetRoute) {
-        toast.success(`Acesso confirmado! Entrando como ${roles.find(r => r.id === selectedRole)?.title}`);
-        setTimeout(() => {
-          router.navigate({ to: targetRoute });
-        }, 1500); // pequeno atraso para o usuário ver a mensagem de sucesso
-      }
-    }
-  }, [account, selectedRole, hasClickedLogin, router]);
 
   async function handleLogin() {
     if (!selectedRole) {
       toast.error("Por favor, selecione um perfil para entrar.");
       return;
     }
-    
-    setHasClickedLogin(true);
-    
-    if (!account) {
-      await connectWallet();
+
+    const target = roles.find(r => r.id === selectedRole);
+    if (!target) return;
+
+    // Tenta conectar wallet em segundo plano se disponível, mas não bloqueia a entrada
+    if (!account && typeof window !== "undefined" && (window as any).ethereum) {
+      try {
+        connectWallet();
+      } catch {
+        // Modo teste sem bloquear
+      }
     }
+
+    toast.success(`Entrando como ${target.title}`);
+    setTimeout(() => {
+      router.navigate({ to: target.route });
+    }, 400);
   }
 
   return (
@@ -119,14 +116,10 @@ function Login() {
                 />
                 <button
                   onClick={handleLogin}
-                  disabled={!selectedRole || isConnecting}
+                  disabled={!selectedRole}
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-primary-foreground font-medium hover:scale-[1.02] transition disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
-                  {isConnecting ? (
-                    <><Loader2 className="size-4 animate-spin" /> Conectando...</>
-                  ) : (
-                    "Continuar com E-mail"
-                  )}
+                  Continuar com E-mail
                 </button>
                 
                 <div className="relative flex items-center py-2">
@@ -137,7 +130,7 @@ function Login() {
 
                 <button
                   onClick={handleLogin}
-                  disabled={!selectedRole || isConnecting}
+                  disabled={!selectedRole}
                   className="w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl border border-border bg-background text-foreground font-medium hover:bg-secondary/50 hover:scale-[1.02] transition disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   <svg className="size-5" viewBox="0 0 24 24">
@@ -151,7 +144,7 @@ function Login() {
               </div>
               
               <p className="text-center text-xs text-muted-foreground mt-6 leading-relaxed">
-                Acesso via Account Abstraction (ERC-4337).<br/>Sua carteira Web3 é criada automaticamente.
+                Ambiente de testes liberado com Account Abstraction (ERC-4337).<br/>Escolha o perfil e acesse instantaneamente.
               </p>
             </div>
           </div>
